@@ -8,32 +8,38 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     fontWeight: 'bolder',
     textDecoration: 'none',
-    [theme.breakpoints.up('xs')]: {
-      display: 'flex',
-      flexDirection: 'column',
-    },
+    display: 'flex',
+    flexDirection: 'column',
     '&:hover': {
       cursor: 'pointer',
     },
   },
   image: {
     borderRadius: '20px',
+    objectFit: 'cover',
+    width: '100%',
     height: '300px',
     marginBottom: '10px',
     '&:hover': {
       transform: 'scale(1.05)',
     },
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+    },
   },
   title: {
     color: theme.palette.text.primary,
-    textOverflow: 'ellipsis',
-    width: '230px',
-    whiteSpace: 'nowrap',
     overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+    width: '100%',
     marginTop: '10px',
-    marginBottom: 0,
+    marginBottom: '10px',
     textAlign: 'center',
   },
 }));
+
+
+
 
 
