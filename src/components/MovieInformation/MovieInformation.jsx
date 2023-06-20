@@ -3,9 +3,10 @@ import { Modal, Typography, Button, ButtonGroup, Grid, Box, CircularProgress, us
 import { Movie as MovieIcon, Theaters, Language, PlusOne, Favorite, FavoriteBorderOutlined, Remove, ArrowBack } from '@mui/icons-material';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useGetMovieQuery} from '../../services/TMBD';
+import { useGetMovieQuery,useGetRecommendationsQuery} from '../../services/TMBD';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import axios from 'axios';
+import {MovieList} from '..';
 import { tmdbApi } from '../../services/TMBD';
 import { ClassNames } from '@emotion/react';
 import genreIcons from '../../assets/genres';
@@ -16,6 +17,7 @@ const MovieInformation = () => {
   const {data,isFetching,error} = useGetMovieQuery(id);
   const classes = useStyles();
   const dispatch = useDispatch();
+  const {data:recommendations,isFetching : isRecommendationsFetching} = useGetRecommendationsQuery({list:'/recommendations',movie_id : id});
  
   const isMovieFavorited = false;
   const isMovieWatchlisted = false;
@@ -27,6 +29,8 @@ const MovieInformation = () => {
   const addToWatchlist = () =>{
 
   };
+
+  
 
   if(isFetching){
     return(
@@ -122,10 +126,17 @@ const MovieInformation = () => {
               </Button>
             </ButtonGroup>
           </Grid>
-
           </div>
         </Grid>
       </Grid>
+      <Box marginTop="5rem" width="100%">
+      <Typography variant='h3' gutterBottom align="center"> 
+             You might also like
+           </Typography>
+           {recommendations
+             ? <MovieList movies={recommendations} numberOfMovies={12}/>
+             : <Box> Sorry nothing was found.</Box>}   
+      </Box>
     </Grid>
   );
     };
