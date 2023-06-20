@@ -3,7 +3,7 @@ import {Box,CircularProgress,useMediaQuery,Typography} from '@mui/material';
 import {useSelector} from 'react-redux';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useGetMoviesQuery } from '../../services/TMBD';
-import MovieList from '../MovieList/MovieList';
+import {MovieList,Pagination} from '..';
 
 
 const Movies = () => {
@@ -39,6 +39,7 @@ const { data, error, isFetching } = useGetMoviesQuery({ genreIdOrCategoryName,pa
   return (
     <div>
    <MovieList movies={data}/>  
+   <Pagination currentPage={page} setPage={setPage} totalPages={data.total_pages} />
     </div>
   );
 };
