@@ -22,11 +22,7 @@ function App() {
           <Route exact path="/actors/:id">
             <Actors />
           </Route>
-<<<<<<< Updated upstream
           <Route exact path={["/","/approved"]}>
-=======
-          <Route exact path={["/" ,"/approved"]}>
->>>>>>> Stashed changes
             <Movies />
           </Route>
           <Route exact path="/profile/:id"> 

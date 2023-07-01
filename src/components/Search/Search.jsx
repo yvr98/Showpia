@@ -20,11 +20,7 @@ const Search = () => {
         }
     };
 
-<<<<<<< Updated upstream
     if (location.pathname !== '/') return null;
-=======
-    if(location.pathname !== '/') return null;
->>>>>>> Stashed changes
     
   return (
     <div className={classes.searchContainer}>

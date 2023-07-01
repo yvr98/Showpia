@@ -7,11 +7,7 @@ import ToggleColorModeProvider from './utils/ToggleColorMode';
 
 import App from './App';
 import store from './app/store';
-<<<<<<< Updated upstream
-import './index.css'
-=======
 import './index.css';
->>>>>>> Stashed changes
 
 
 
