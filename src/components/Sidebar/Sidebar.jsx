@@ -16,8 +16,8 @@ const  categories = [
 
 
 
-const redLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
-const blueLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
+const redLogo = 'https://fontmeme.com/permalink/230701/f2526947d24fbbecf20f31fccc5a0bb7.png';
+const blueLogo = 'https://fontmeme.com/permalink/230701/914985c0f8bc81b9a86d04198d371a49.png';
 
 const Sidebar = ({setMobileOpen}) => {
 const {  genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
